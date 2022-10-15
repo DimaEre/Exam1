@@ -3,11 +3,6 @@
 #include<windows.h>
 
 using namespace std;
-
-int solution(vector<int> &vec)
-{
-	return 0;
-}
 void show(vector<int> vec)
 {
 	cout << endl;
@@ -17,35 +12,9 @@ void show(vector<int> vec)
 	}
 	cout << endl;
 }
-int main()
-{
-	SetConsoleCP(1251);
-	SetConsoleOutputCP(1251);
 
-	vector<int> vec;
-	bool a = true;
-	int b = 0;
-	cout << "\nÂâåä³òü íåïàðí³ ÷èñëà(ââåä³òü 0 äëÿ çóïèíêè ïðîãðàìè):	";
-	while (a == true)
-	{
-		cin >> b;
-		if (b == 0 && vec.size() != 0)
-		{
-		a = false;
-		}
-		else if (b == 0 && vec.size() == 0)
-		{
-			cout << "Âåêòîð ìàº ì³ñòèòè õî÷à-á îäíå çíà÷åííÿ\n";
-		}
-		else if (b % 2 == 0 || b < 0)
-		{
-			cout << "Öå  ÷èñëî íå ï³äõîäèòü\n";
-		}
-		else
-		{
-			vec.push_back(b);
-		}
-	}
+int solution(vector<int> &vec)
+{
 	show(vec);
 	for (size_t i = 0; i < vec.size(); i++)
 	{
@@ -57,7 +26,7 @@ int main()
 			}
 			if (vec[i] == vec[j])
 			{
-				cout << "åëåìåíòè ç ³íäåêñàìè " << i << " i " << j << " ìàþòü çíà÷åííÿ " << vec[i] << endl;
+				cout << "ÐµÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¸ Ð· Ñ–Ð½Ð´ÐµÐºÑÐ°Ð¼Ð¸ " << i << " i " << j << " Ð¼Ð°ÑŽÑ‚ÑŒ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð½Ñ " << vec[i] << endl;
 				vec[i] = 0;
 				vec[j] = 0;
 			}
@@ -66,7 +35,39 @@ int main()
 	for (size_t i = 0; i < vec.size(); i++)
 	{
 		if (vec[i] != 0)
-		cout << "åëåìåíò ç ³íäåêñîì " << i << " ìàº çíà÷åííÿ " << vec[i] << " ³ íå º ïàðíèì" << endl;
+			cout << "ÐµÐ»ÐµÐ¼ÐµÐ½Ñ‚ Ð· Ñ–Ð½Ð´ÐµÐºÑÐ¾Ð¼ " << i << " Ð¼Ð°Ñ” Ð·Ð½Ð°Ñ‡ÐµÐ½Ð½Ñ " << vec[i] << " Ñ– Ð½Ðµ Ñ” Ð¿Ð°Ñ€Ð½Ð¸Ð¼" << endl;
 	}
-	
+	return 0;
+}
+
+int main()
+{
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+	vector<int> vec;
+	bool a = true;
+	int b = 0;
+	cout << "\nÐ’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ð½ÐµÐ¿Ð°Ñ€Ð½Ñ– Ñ‡Ð¸ÑÐ»Ð°(Ð²Ð²ÐµÐ´Ñ–Ñ‚ÑŒ 0 Ð´Ð»Ñ Ð·ÑƒÐ¿Ð¸Ð½ÐºÐ¸ Ð¿Ñ€Ð¾Ð³Ñ€Ð°Ð¼Ð¸):	";
+	while (a == true)
+	{
+		cin >> b;
+		if (b == 0 && vec.size() != 0)
+		{
+		a = false;
+		}
+		else if (b == 0 && vec.size() == 0)
+		{
+			cout << "Ð’ÐµÐºÑ‚Ð¾Ñ€ Ð¼Ð°Ñ” Ð¼Ñ–ÑÑ‚Ð¸Ñ‚Ð¸ Ñ…Ð¾Ñ‡Ð°-Ð± Ð¾Ð´Ð½Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð½Ñ\n";
+		}
+		else if (b % 2 == 0 || b < 0)
+		{
+			cout << "Ð¦Ðµ  Ñ‡Ð¸ÑÐ»Ð¾ Ð½Ðµ Ð¿Ñ–Ð´Ñ…Ð¾Ð´Ð¸Ñ‚ÑŒ\n";
+		}
+		else
+		{
+			vec.push_back(b);
+		}
+	}
+	solution(vec);
 }
